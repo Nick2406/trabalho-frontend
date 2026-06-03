@@ -49,5 +49,3 @@ export function MusicaProvider({ children }) {
     </MusicaContext.Provider>
   );
 }
-
-export default MusicaContext;
