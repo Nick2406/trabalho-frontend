@@ -1,31 +1,52 @@
-import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../context/AuthContext';
 
 export default function Navbar() {
-  // Função para aplicar cor vermelha se o link estiver ativo, ou branco se não estiver
-  const linkStyles = ({ isActive }) =>
-    isActive
-      ? "text-red-500 font-semibold border-b-2 border-red-500 pb-1"
-      : "text-zinc-300 hover:text-white transition-colors pb-1";
+  const { usuarioLogado, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout();
+    navigate('/cadastro');
+  };
 
   return (
-    <header className="bg-black py-4 px-8 shadow-md flex flex-col md:flex-row justify-between items-center border-b border-zinc-800">
-      {/* Logo Fake */}
-      <div className="text-2xl font-black text-white tracking-tighter mb-4 md:mb-0">
-        last<span className="text-red-600">.fm</span>
-      </div>
+    <nav className="bg-zinc-900 border-b border-zinc-800 p-4 sticky top-0 z-50">
+      <div className="max-w-6xl mx-auto flex justify-between items-center">
+        {/* Logo */}
+        <Link to="/" className="text-red-500 font-bold text-2xl tracking-tighter">
+          Last.fm Clone
+        </Link>
 
-      {/* Menu de Navegação */}
-      <nav className="flex gap-6 text-sm uppercase tracking-wide font-medium">
-        <NavLink to="/" className={linkStyles}>
-          Início
-        </NavLink>
-        <NavLink to="/cadastro" className={linkStyles}>
-          Cadastro
-        </NavLink>
-        <NavLink to="/historico" className={linkStyles}>
-          Histórico
-        </NavLink>
-      </nav>
-    </header>
+        <div className="flex items-center gap-6">
+          {usuarioLogado ? (
+            <>
+              <span className="text-zinc-400 text-sm hidden md:block">
+                Olá, <strong className="text-white">{usuarioLogado.nome}</strong>
+              </span>
+              <Link to="/" className="text-zinc-300 hover:text-white transition-colors font-medium">
+                Início
+              </Link>
+              <button
+                onClick={handleLogout}
+                className="text-red-500 hover:text-red-400 font-medium transition-colors"
+              >
+                Sair
+              </button>
+            </>
+          ) : (
+            <>
+              <Link
+                to="/cadastro"
+                className="bg-red-600 hover:bg-red-700 text-white px-5 py-2 rounded font-medium transition-colors"
+              >
+                Entrar
+              </Link>
+            </>
+          )}
+        </div>
+      </div>
+    </nav>
   );
 }
