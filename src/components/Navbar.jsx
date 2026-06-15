@@ -27,6 +27,9 @@ export default function Navbar() {
               <Link to="/" className="text-zinc-300 hover:text-white transition-colors font-medium">
                 Início
               </Link>
+              <Link to="/novo-scrobble" className="text-zinc-300 hover:text-white transition-colors font-medium">
+                Novo Scrobble
+              </Link>
               <button
                 onClick={handleLogout}
                 className="text-red-500 hover:text-red-400 font-medium transition-colors"
