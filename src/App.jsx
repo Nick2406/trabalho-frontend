@@ -5,7 +5,7 @@ import Inicio from './pages/Inicio';
 import Cadastro from './pages/Cadastro';
 import NovoScrobble from './pages/NovoScrobble';
 
-function App() {
+export default function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-zinc-950 font-sans">
@@ -35,5 +35,3 @@ function App() {
     </BrowserRouter>
   );
 }
-
-export default App;
