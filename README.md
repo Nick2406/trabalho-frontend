@@ -36,21 +36,26 @@ git clone [COLOQUE_O_LINK_DO_SEU_GITHUB_AQUI]
 cd trabalho-frontend
 npm install
 
+```
 3. Iniciar o Banco de Dados (Terminal 1)
 
 O Frontend precisa do banco de dados ligado para realizar login e salvar músicas. No terminal, inicie o json-server na porta 3000:
-Bash
+
+```Bash
 
 npx json-server --watch db.json --port 3000
 
+```
 (Deixe este terminal aberto rodando em segundo plano).
 4. Iniciar a Aplicação React (Terminal 2)
 
 Abra uma nova aba ou um novo terminal na mesma pasta do projeto e inicie o servidor do Vite:
-Bash
+
+```Bash
 
 npm run dev
 
+```
 5. Acessar no Navegador
 
 Pronto! Com os dois terminais rodando, abra o seu navegador e acesse:
