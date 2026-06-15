@@ -2,9 +2,24 @@
   "musicas": [
     {
       "id": "1",
-      "titulo": "Bohemian Rhapsody",
-      "artista": "Queen",
-      "album": "A Night at the Opera"
+      "titulo": "Wish you Were Here",
+      "artista": "Pink Floyd",
+      "album": "Wish You Were Here"
+    },
+    {
+      "titulo": "Planet Caravan",
+      "artista": "Black Sabbath",
+      "album": "Paranoid",
+      "id": "DUJxtEVZZEY"
     }
-  ]
+  ],
+  "usuarios": [
+    {
+      "nome": "Nícolas Ferreira Vital",
+      "email": "nickfv2406@gmail.com",
+      "senha": "123456",
+      "id": "VkR5jJ5zVac"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

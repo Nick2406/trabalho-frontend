@@ -1,16 +1,62 @@
-# React + Vite
+# 🎵 Last.fm - Trabalho Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação web inspirada no Last.fm, desenvolvida como requisito de avaliação da disciplina de Frontend. Ele permite que os usuários criem uma conta, façam login de forma segura e registrem (façam o *scrobble*) do seu histórico de músicas ouvidas.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades Implementadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Autenticação de Usuários:** Sistema completo de Cadastro, Login e Logout.
+* **Proteção de Rotas (Private Routes):** Usuários não logados são bloqueados de acessar o dashboard e redirecionados para a tela de autenticação.
+* **Dashboard Dinâmico:** Listagem em tempo real do histórico de músicas cadastradas.
+* **Formulários Validados:** Telas de cadastro e de "Novo Scrobble" blindadas com validação de campos obrigatórios.
+* **Design Responsivo:** Interface construída de forma adaptável, funcionando perfeitamente em telas de computadores e smartphones.
+* **Feedback Visual:** Indicadores de carregamento (Loading) enquanto os dados trafegam entre o Frontend e a API.
 
-## React Compiler
+## 🛠️ Tecnologias Utilizadas
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* **React + Vite**: Motor do projeto, garantindo renderização rápida e modularização em componentes.
+* **Tailwind CSS**: Estilização moderna, responsiva e baseada em classes utilitárias.
+* **React Router Dom**: Gerenciamento de rotas SPA (Single Page Application).
+* **React Hook Form**: Manipulação e validação eficiente de estados em formulários.
+* **JSON Server**: Ferramenta para simular o Banco de Dados e as requisições de uma API REST (Backend).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 💻 Como Rodar o Projeto Localmente
+
+Para que a aplicação funcione corretamente, é necessário rodar o **Servidor Frontend (Vite)** e o **Servidor de Banco de Dados (JSON Server)** simultaneamente. Siga o passo a passo:
+
+### 1. Pré-requisitos
+Certifique-se de ter o [Node.js](https://nodejs.org/) e o Git instalados na sua máquina.
+
+### 2. Clonar e Instalar
+Abra o terminal na pasta onde deseja baixar o projeto e rode os comandos:
+
+```bash
+git clone [COLOQUE_O_LINK_DO_SEU_GITHUB_AQUI]
+cd trabalho-frontend
+npm install
+
+```
+3. Iniciar o Banco de Dados (Terminal 1)
+
+O Frontend precisa do banco de dados ligado para realizar login e salvar músicas. No terminal, inicie o json-server na porta 3000:
+
+```Bash
+
+npx json-server --watch db.json --port 3000
+
+```
+(Deixe este terminal aberto rodando em segundo plano).
+4. Iniciar a Aplicação React (Terminal 2)
+
+Abra uma nova aba ou um novo terminal na mesma pasta do projeto e inicie o servidor do Vite:
+
+```Bash
+
+npm run dev
+
+```
+5. Acessar no Navegador
+
+Pronto! Com os dois terminais rodando, abra o seu navegador e acesse:
+👉 http://localhost:5173/
