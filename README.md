@@ -32,7 +32,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) e o Git instalados na sua 
 Abra o terminal na pasta onde deseja baixar o projeto e rode os comandos:
 
 ```bash
-git clone [COLOQUE_O_LINK_DO_SEU_GITHUB_AQUI]
+git clone https://github.com/Nick2406/trabalho-frontend
 cd trabalho-frontend
 npm install
 
